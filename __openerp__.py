@@ -1,13 +1,13 @@
 {
-    'name': 'WESTELCO CRM campos adicionales',
+    'name': 'RUMEX CRM campos adicionales',
     'category': 'Tools',
-    'summary': 'Incluir campos adicionales en el crm',
+    'summary': 'Incluye campos adicionales en el crm de Runmex desarrollados por ADWEB',
     'website': 'https://www.adweb.mx',
     'version': '1.0',
     'description': """
-Modulo de ADWEB para WESTELCO - CRM
+Modulo de ADWEB para RUMEX - CRM
 ===================================
-    Este módulo incluye un grupo de campos nuevos a los modelos res.parters y crm.lead, para cumplir los requerimientos de WESTELCO
+    Este módulo incluye un grupo de campos nuevos a los modelos res.partners y crm.lead, para cumplir los requerimientos de RUMEX
 
     
         """,

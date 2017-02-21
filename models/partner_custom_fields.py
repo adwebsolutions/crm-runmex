@@ -46,16 +46,18 @@ class PartnerCustomFields(models.Model):
   # A continuación los campos adicionales para los partners (usuarios)
   # El nombre de las variales debe ser en notacion snake_case
 
-  westelco_puesto_trabajo    = fields.Char(string="Puesto de Trabajo", help="Puesto de trabajo del cliente")
-  westelco_tiene_credito     = fields.Boolean(string="¿Tiene Crédito?", help="¿Tiene crédito?")
-  westelco_dias_de_credito   = fields.Selection(string="Días de crédito", help="Días de crédito que tiene el cliente", selection=[(30, 30), (45, 45), (60, 60)])
-  westelco_domicilio_fiscal  = fields.Char(string="Domicilio Fiscal", help="Domicilio Fiscal de la empresa")
-  westelco_rfc               = fields.Char(string="RFC", help="RFC de la empresa")
-  westelco_razon_social      = fields.Char(string="Razón Social", help="Razón Social de la empresa")
-  westelco_reseller          = fields.Boolean(string="¿Es RESELLER?", help="¿Es un reseller?")
-  westelco_certificaciones   = fields.Boolean(string="¿Tiene certificaciones?", help="¿Tiene certificaciones?")
-  westelco_equipo_demo       = fields.Boolean(string="¿Tiene equipo para DEMO?", help="¿Tiene equipo para DEMO?")
+  runmex_domicilio_fiscal  = fields.Char(string="Domicilio Fiscal", help="Domicilio Fiscal de la empresa")
+  runmex_rfc               = fields.Char(string="RFC", help="RFC de la empresa")
+  runmex_razon_social      = fields.Char(string="Razón Social", help="Razón Social de la empresa")
 
+  
+  
+  runmex_giros    = fields.Many2one(comodel_name = 'runmex.giros', string ='Giro')
+  
+class RunmexGiros(models.Model):
+	_name = 'runmex.giros'
+	giro_name  = fields.Char('Giros', required=True)  
+  
 
 #
 #   En ocasiones es necesario crear campos que se comporten como catálogos abiertos, que el usuario puede crear nuevos items al hacer la asociación
@@ -64,7 +66,7 @@ class PartnerCustomFields(models.Model):
 #   Por ejemplo, si quisiera añadir un campo Industria, y que el usario pudiera crear nuevos si el que desea no está, debo hacer esto:
 
 
-#   westelco_industria    = fields.Many2one('westelco.industria')
+#   runmex_industria    = fields.Many2one('westelco.industria')
 
 #   Luego, se debe crear el nuevo modelo, en este caso Industria
 #   En el mismo archivo puede ser, aunque lo ideal es qeu sea en otro .py,
