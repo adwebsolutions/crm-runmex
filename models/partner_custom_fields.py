@@ -55,8 +55,8 @@ class PartnerCustomFields(models.Model):
   runmex_giros    = fields.Many2one(comodel_name = 'runmex.giros', string ='Giro')
   
 class RunmexGiros(models.Model):
-	_name = 'runmex.giros'
-	giro_name  = fields.Char('Giros', required=True)  
+  _name = 'runmex.giros'
+  name  = fields.Char('Giros', required=True)  
   
 
 #
