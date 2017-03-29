@@ -6,6 +6,23 @@
           <field name="model">res.partner</field>
           <field name="inherit_id" ref="base.view_partner_form"/>
           <field name="arch" type="xml">
+			<!-- Renombrar campo -->
+			<xpath expr="//field[@name='mobile']" position="attributes">
+			    <attribute name="string">Celular (Móvil)</attribute>
+		    </xpath>
+			<xpath expr="//field[@name='email']" position="attributes">
+			    <attribute name="string">Correo Empresarial</attribute>
+		    </xpath>
+			<!-- Fin Renombrar campo -->
+			<field name="email" position="after">
+				<field name="runmex_correo_personal" placeholder="Correo Personal" attrs="{'invisible':[('is_company', '=', True)]}" />
+			</field>
+			<!-- Eliminar campos -->
+		    <data>
+                <field name="fax" position="replace"/>
+				<field name="title" position="replace"/>
+            </data>
+			<!-- Fin Eliminar campos -->
             <field name="category_id" position="after">
                 <hr attrs="{'invisible':[('is_company', '=', False)]}" />
                 <h2 attrs="{'invisible':[('is_company', '=', False)]}" > Otros datos de la Compañia </h2>

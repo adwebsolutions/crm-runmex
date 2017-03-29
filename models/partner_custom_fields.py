@@ -49,14 +49,13 @@ class PartnerCustomFields(models.Model):
   runmex_domicilio_fiscal  = fields.Char(string="Domicilio Fiscal", help="Domicilio Fiscal de la empresa")
   runmex_rfc               = fields.Char(string="RFC", help="RFC de la empresa")
   runmex_razon_social      = fields.Char(string="Razón Social", help="Razón Social de la empresa")
-
-  
+  runmex_correo_personal      = fields.Char(string="Correo Personal", help="Correo Personal")
   
   runmex_giros    = fields.Many2one(comodel_name = 'runmex.giros', string ='Giro')
   
 class RunmexGiros(models.Model):
-  _name = 'runmex.giros'
-  name  = fields.Char('Giros', required=True)  
+	_name = 'runmex.giros'
+	name  = fields.Char('Giros', required=True)  
   
 
 #
